@@ -1,0 +1,39 @@
+.section {
+    margin-top: 1.1em;
+    border-bottom: solid darkgray;
+}
+
+.group {
+    margin-top: 0.5em;
+    text-decoration: underline;
+}
+
+.envelop {
+    margin: 0.5em;
+    width: 50%;
+}
+
+.ui-dform-select {
+    display: block;
+    margin-right: 10px;
+}
+
+.ui-dform-text {
+    margin-left: 20px;
+}
+
+.ui-dform-radio + label {
+    margin-right: 20px;
+}
+
+.ui-dform-checkbox + label::after {
+    content:"\A"; white-space:pre;
+}
+
+input[type='text'] {
+    margin-right: 20px;
+}
+
+.ui-dform-p {
+    margin-top: 1.5em;
+}
