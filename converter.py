@@ -241,6 +241,9 @@ if __name__ == '__main__':
         if isOK(getVal(SI,6,ind)):
             SINGLE_ELEMENT['oc_group'] = getVal(SI,6,ind)
 
+        if isOK(getVal(SI,24,ind)) and getVal(SI,24,ind) == '1':
+            SINGLE_ELEMENT['required'] = True
+
         ENCLOSING_ENVELOP = {}
         ENCLOSING_ENVELOP['type'] = 'div'
         ENCLOSING_ENVELOP['class'] = 'envelop'
