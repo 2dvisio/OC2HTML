@@ -19,6 +19,6 @@ This script is probably a good starting point to tweak your parser.
 Possible Extensions
 =====
 
-* Complete all form elements (e.g. adding all labels, both right and left)
-* Include HIDE/SHOW elements (i.e. dynamically showing elements according to predefined conditions)
-* Using http://openpyxl.readthedocs.org/ to read directly from the XLSX file
+* Complete all form elements (e.g. adding all labels, both right and left).
+* Include HIDE/SHOW elements (i.e. dynamically showing elements according to predefined conditions).
+* Include validation elements.
