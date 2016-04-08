@@ -35,7 +35,6 @@ def combineOptions(opt, vals):
     for i in range(0, len(VALS)):
         #if OPTS[i].strip() != '' and VALS[i].strip() != '':
         OptionsElement[VALS[i].strip()] = OPTS[i].strip()
-
     return OptionsElement
 
 
@@ -231,6 +230,8 @@ if __name__ == '__main__':
         # Substitute the type with number
         if SINGLE_ELEMENT['type'] == 'text' and isOK(getVal(SI,19,ind)) and (getVal(SI,19,ind) == 'INT' or getVal(SI,19,ind) == 'REAL'):
             SINGLE_ELEMENT['type'] = 'number'
+            if(getVal(SI,19,ind) == 'REAL'):
+                SINGLE_ELEMENT['step'] = 'any'
 
         if isOK(getVal(SI,3,ind)):
             SINGLE_ELEMENT['units'] = getVal(SI,3,ind)
@@ -287,7 +288,6 @@ if __name__ == '__main__':
     # html += '<form id="myform"></form><script type="text/javascript">$(function() {$("#myform").dform({ "action": "http://localhost:8888/supporthf2/plotFormData.php", "method": "post", "html": '
     # html += json.dumps(FINAL_ENVELOP)
     # html += '});});</script>'
-
 
     for Section, Elements in ALL_FORM_ELEMENTS.iteritems():
         if connection:
