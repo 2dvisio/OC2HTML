@@ -17,6 +17,8 @@ import fnmatch
 import csv
 import json
 from openpyxl import load_workbook
+import unicodedata
+
 
 def convertOCType(text):
     if text == 'radio': return 'radiobuttons'
@@ -291,9 +293,9 @@ if __name__ == '__main__':
 
     for Section, Elements in ALL_FORM_ELEMENTS.iteritems():
         if connection:
-            query = "INSERT INTO data_forms(name,versionbig,versionsmall,form_schema) VALUES ('{0}',{1},{2},'{3}')".format(Section, VERSION_BIG, VERSION_SMALL, json.dumps(Elements))
+            query = "INSERT INTO data_forms(name,versionbig,versionsmall,form_schema) VALUES (%s, %s, %s, %s)"
             cur = connection.cursor()
-            cur.execute(query)
+            cur.execute(query, (Section, VERSION_BIG, VERSION_SMALL, json.dumps(Elements)))
             connection.commit()
 
         html += '<form id="myform'+Section+'"></form><script type="text/javascript">$(function() {$("#myform'+Section+'").dform({ "action": "http://localhost:8888/supporthf2/plotFormData.php", "method": "post", "html": '
